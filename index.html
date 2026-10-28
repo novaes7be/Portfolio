@@ -44,7 +44,7 @@ nav .links a.active,nav .links a:hover{color:#fff}
 .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--mut);margin-bottom:22px}
 .tag i{width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g)}
 h1{font-size:clamp(2.8rem,8vw,5.6rem);line-height:.98;font-weight:800;letter-spacing:-.04em}
-h1 em{font-style:normal;display:block;background:var(--rainbow);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:flow 6s linear infinite}
+h1 em{font-style:normal;display:block;background:linear-gradient(90deg,#1f5fff,#4fb3ff,#2be3ff,#4fb3ff,#1f5fff);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:flow 6s linear infinite}
 @keyframes flow{to{background-position:200% 0}}
 .sub{margin:22px 0 32px;color:var(--mut);font-size:1.15rem;max-width:480px}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
@@ -116,6 +116,7 @@ footer{text-align:center;color:var(--mut);padding:30px;border-top:1px solid var(
     <a href="#home" class="active">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#projetos">Projetos</a>
+    <a href="#eventos">Eventos</a>
     <a href="#stats">GitHub</a>
     <a href="#contato">Contato</a>
   </div>
@@ -141,6 +142,7 @@ footer{text-align:center;color:var(--mut);padding:30px;border-top:1px solid var(
     <div>
       <p>Estou no <b>2º semestre</b> de Desenvolvimento de Software Multiplataforma na <b>Fatec Osasco</b>, focado em <b>Java e Spring Boot</b>.</p>
       <p>Gosto de entender como as coisas funcionam por baixo: já implementei <b>TOTP na mão</b> (HMAC, Base32, truncamento) e publiquei uma <b>GitHub Action</b>.</p>
+      <p>Fiz <b>intercâmbio na ILAC, em Toronto</b>, e conquistei o nível <b>C1 em inglês</b>.</p>
       <p>Procuro estágio para aprender em time e entregar valor real.</p>
       <div class="chips">
         <span class="chip" style="--c:#ff7a1a">Java</span>
@@ -155,6 +157,7 @@ footer{text-align:center;color:var(--mut);padding:30px;border-top:1px solid var(
     <div class="facts">
       <div class="fact"><small>Formação</small><div>Desenv. Multiplataforma — Fatec Osasco</div></div>
       <div class="fact"><small>Foco</small><div>Full-stack, com foco em back-end Java</div></div>
+      <div class="fact"><small>Inglês</small><div>C1 · Duolingo English Test: 129</div></div>
       <div class="fact"><small>Objetivo</small><div>Estágio em tecnologia</div></div>
     </div>
   </div>
@@ -184,6 +187,16 @@ footer{text-align:center;color:var(--mut);padding:30px;border-top:1px solid var(
       <div class="tags"><span>Java</span><span>HMAC</span><span>Spring</span></div>
       <span class="go">Ver no GitHub →</span>
     </a>
+  </div>
+</section>
+
+<section id="eventos">
+  <h2>Eventos e <span>intercâmbio</span></h2>
+  <div class="grid">
+    <div class="card rv" style="--c:#ff7a1a"><div class="top mono"><span>Evento</span></div><h3>FIAP Connect Summit</h3><p>Participação no evento de tecnologia e inovação da FIAP.</p></div>
+    <div class="card rv" style="--c:#ffd400"><div class="top mono"><span>Evento</span></div><h3>AWS Summit</h3><p>Participação no evento de cloud computing da Amazon Web Services.</p></div>
+    <div class="card rv" style="--c:#2d7bff"><div class="top mono"><span>Evento</span></div><h3>Google Cloud Summit</h3><p>Participação no evento de cloud e IA do Google Cloud.</p></div>
+    <div class="card rv wide" style="--c:#2be36b"><div class="top mono"><span>Intercâmbio</span></div><h3>ILAC — Toronto, Canadá</h3><p>Intercâmbio que me levou ao nível C1 em inglês. Duolingo English Test: 129.</p></div>
   </div>
 </section>
 
