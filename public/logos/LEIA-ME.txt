@@ -1,0 +1,1 @@
+Coloque aqui os logos oficiais (ex.: fiap.svg, fundacao-bradesco.svg) e preencha LOCAL_LOGOS em src/content/content.ts. Sem arquivo, o site mostra uma placa com o nome.
