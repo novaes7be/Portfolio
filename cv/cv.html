@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- Fonte dos currículos. Gerar PDF: npm run cv (cv.html?lang=pt | ?lang=en) -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>CV Bernardo Novaes</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:10pt/1.42 "Liberation Sans",Arial,Helvetica,sans-serif;color:#1b2236;width:210mm;height:296mm;overflow:hidden;display:grid;grid-template-columns:68mm 1fr}
+aside{background:#090b0a;color:#e8ebf5;padding:13mm 8mm 10mm 10mm}
+main{padding:13mm 13mm 10mm 12mm}
+h1{font-size:26pt;font-weight:400;letter-spacing:-.5pt;line-height:1.1}
+.role{color:#4a5470;margin:2mm 0 1mm}
+.loc{color:#7a829a;font-size:9.5pt}
+h2{font-size:12pt;font-weight:700;color:#3d6b00;text-transform:uppercase;letter-spacing:1.2pt;margin:5mm 0 2mm;padding-bottom:1.5mm;border-bottom:1px solid #e3e6ef}
+aside h2{color:#c6ff6b;border-color:rgba(255,255,255,.15);font-size:10pt}
+aside h2:first-of-type{margin-top:0}
+aside p,aside li{font-size:9.5pt;margin-bottom:1.6mm;color:#d4d9e8;word-break:break-word}
+aside a{color:#fff;text-decoration:none}
+ul{list-style:none}
+.item{margin-bottom:3mm}
+.item b{display:block;font-size:11pt}
+.item .when{color:#7a829a;font-size:9.5pt}
+.item li{position:relative;padding-left:4mm;margin-top:1mm}
+.item li::before{content:"";position:absolute;left:0;top:2.2mm;width:1.6mm;height:1.6mm;border-radius:50%;background:#3d6b00}
+.sig{width:36mm;margin-bottom:6mm}
+.tags{display:flex;flex-wrap:wrap;gap:1.5mm}
+.tags span{border:1px solid rgba(255,255,255,.25);border-radius:10mm;padding:.4mm 2.4mm;font-size:9pt}
+</style>
+</head>
+<body>
+<aside>
+  <svg class="sig" viewBox="0 0 249 112" style="overflow:visible"><path d="M45.6 35.4L45.6 35.4Q45.9 35.4 46.1 36.5L46.1 36.5Q46.1 41.2 37.9 53.8Q29.7 66.4 19.7 77.3Q9.7 88.2 5.2 88.2L5.2 88.2Q4 88.2 4 86.7L4 86.7Q4 80.4 9.3 70.7Q14.6 60.9 23.5 50.8Q32.4 40.6 42.8 31.6Q53.2 22.6 64.5 16.9Q75.9 11.2 84.9 11.2L84.9 11.2Q91.8 11.2 91.8 14.7L91.8 14.7Q91.8 19.9 78.6 30.4Q65.3 40.9 55.3 45.6L55.3 45.6Q55.3 45.8 55.7 45.8L55.7 45.8Q60.1 45.2 63.1 45.2L63.1 45.2Q72.7 45.2 72.7 51.7L72.7 51.7Q72.7 57.7 65.3 66.6Q57.9 75.5 47.3 82.3Q36.6 89.1 28.5 89.1L28.5 89.1Q22.6 89.1 22.6 84L22.6 84Q22.6 80.5 25.1 75.8Q27.6 71 30.2 68.6L30.2 68.6Q30.8 68.2 31 68.2Q31.2 68.2 31.2 68.3L31.2 68.3Q29 71.3 27.1 75.8Q25.2 80.2 25.2 83.6L25.2 83.6Q25.2 88 29.1 88L29.1 88Q34.4 88 44.1 81Q53.8 74 61.5 65Q69.2 55.9 69.2 50.7L69.2 50.7Q69.2 46.2 62.7 46.2L62.7 46.2Q55.9 46.2 52.1 47.8L52.1 47.8L50.7 48.3Q44 51 43.5 51Q43 51 43 50.8Q43 50.5 43.8 50L43.8 50Q53.1 46.2 63.2 38.7Q73.3 31.2 79.6 24.3Q85.9 17.3 85.9 14.1L85.9 14.1Q85.9 12.4 83.7 12.4L83.7 12.4Q73.5 12.4 59.5 21.4Q45.4 30.5 33.8 42.6Q22.1 54.7 13.8 67Q5.5 79.3 5.5 85.7L5.5 85.7Q5.5 86.8 6.1 86.8L6.1 86.8Q8 86.8 16.8 76.5Q25.5 66.3 34.3 53.8Q43.1 41.3 44.7 36.1L44.7 36.1Q44.9 35.4 45.6 35.4ZM79.8 59.5L79.8 59.5Q75.7 59.5 75.7 55L75.7 55Q75.7 45.3 84.2 33.8Q92.6 22.3 105 14.4Q117.3 6.5 127.7 6.5L127.7 6.5Q130.2 6.5 131.2 7.6Q132.1 8.7 132.1 11.2L132.1 11.2Q132.1 17 124.5 29.6L124.5 29.6Q111.9 50.3 92.7 72.4L92.7 72.4Q92.4 72.7 92.4 73Q92.4 73.4 92.6 73.4Q92.8 73.4 93.4 72.8L93.4 72.8Q118 50.3 120.9 47.4Q123.8 44.5 146.3 24.3Q168.7 4 169.7 4Q170.7 4 170.7 5.1L170.7 5.1Q170.7 8.7 159.3 23.6Q147.9 38.6 134.2 54.8Q120.4 71 109 86.2Q97.6 101.3 97.6 105.2L97.6 105.2Q97.6 105.6 98 105.6Q98.5 105.6 100.2 104.5Q101.9 103.4 102.1 103.4L102.1 103.4Q102.9 103.4 102.9 103.9L102.9 103.9Q102.9 104.1 102.5 104.4L102.5 104.4Q98.4 107.1 97.1 107.1L97.1 107.1Q96 107.1 96 105.8L96 105.8Q96 100.5 103.5 88.6Q110.9 76.7 121.5 63.3Q132.1 50 142.8 37.3Q153.4 24.7 160.8 15.8Q168.3 6.9 168.3 6L168.3 6Q168.3 5.9 168.1 5.9Q167.9 5.9 161.7 11.5Q155.5 17.1 146.4 25.4Q137.3 33.8 128.4 41.9Q119.5 50.1 112.4 56.6Q105.3 63.1 92.7 75Q80.1 86.8 80 86.9L80 86.9Q79 87.9 77.7 87.9Q76.3 87.9 76.3 87.5Q76.3 87 78.5 84.1Q80.7 81.2 91 68.4Q101.4 55.6 109.4 45.4Q117.4 35.3 124.2 24.8Q131 14.3 131 10.4L131 10.4Q131 8.8 130.3 8.1Q129.5 7.5 127.7 7.5L127.7 7.5Q121.5 7.5 114.2 11.4Q106.8 15.3 100.4 21.1Q94 27 88.6 33.5Q83.2 40.1 80 46Q76.9 51.9 76.9 55.3Q76.9 58.6 80 58.6Q83 58.6 87 56.6Q90.9 54.6 94.4 51.8L94.4 51.8Q101.7 46 105.8 41.4L105.8 41.4L107.6 39.4Q108.1 38.8 108.5 38.8Q108.8 38.8 108.8 39.3Q108.8 39.7 108.2 40.3Q107.6 41 106.5 42.3Q105.3 43.6 101.8 46.9Q98.3 50.2 95 52.8Q91.7 55.3 87.5 57.4Q83.2 59.5 79.8 59.5ZM153.4 59.5L153.4 59.5Q149.3 59.5 149.3 55L149.3 55Q149.3 45.3 157.7 33.8Q166.2 22.3 178.5 14.4Q190.9 6.5 201.3 6.5L201.3 6.5Q203.8 6.5 204.8 7.6Q205.7 8.7 205.7 11.2L205.7 11.2Q205.7 17 198.1 29.6L198.1 29.6Q185.5 50.3 166.3 72.4L166.3 72.4Q166 72.7 166 73Q166 73.4 166.2 73.4Q166.4 73.4 167 72.8L167 72.8Q191.6 50.3 194.5 47.4Q197.4 44.5 219.8 24.3Q242.3 4 243.3 4Q244.3 4 244.3 5.1L244.3 5.1Q244.3 8.7 232.9 23.6Q221.5 38.6 207.8 54.8Q194 71 182.6 86.2Q171.2 101.3 171.2 105.2L171.2 105.2Q171.2 105.6 171.6 105.6Q172.1 105.6 173.8 104.5Q175.5 103.4 175.7 103.4L175.7 103.4Q176.5 103.4 176.5 103.9L176.5 103.9Q176.5 104.1 176.1 104.4L176.1 104.4Q172 107.1 170.7 107.1L170.7 107.1Q169.6 107.1 169.6 105.8L169.6 105.8Q169.6 100.5 177 88.6Q184.5 76.7 195.1 63.3Q205.7 50 216.3 37.3Q227 24.7 234.4 15.8Q241.9 6.9 241.9 6L241.9 6Q241.9 5.9 241.7 5.9Q241.5 5.9 235.3 11.5Q229.1 17.1 220 25.4Q210.9 33.8 202 41.9Q193.1 50.1 186 56.6Q178.9 63.1 166.3 75Q153.7 86.8 153.6 86.9L153.6 86.9Q152.6 87.9 151.2 87.9Q149.9 87.9 149.9 87.5Q149.9 87 152.1 84.1Q154.3 81.2 164.6 68.4Q175 55.6 183 45.4Q191 35.3 197.8 24.8Q204.6 14.3 204.6 10.4L204.6 10.4Q204.6 8.8 203.8 8.1Q203.1 7.5 201.3 7.5L201.3 7.5Q195.1 7.5 187.8 11.4Q180.4 15.3 174 21.1Q167.6 27 162.2 33.5Q156.8 40.1 153.6 46Q150.5 51.9 150.5 55.3Q150.5 58.6 153.5 58.6Q156.6 58.6 160.5 56.6Q164.5 54.6 168 51.8L168 51.8Q175.3 46 179.4 41.4L179.4 41.4L181.2 39.4Q181.7 38.8 182 38.8Q182.4 38.8 182.4 39.3Q182.4 39.7 181.8 40.3Q181.2 41 180 42.3Q178.9 43.6 175.4 46.9Q171.9 50.2 168.6 52.8Q165.3 55.3 161 57.4Q156.8 59.5 153.4 59.5Z" fill="#fff"/><path d="M-7.5 73.9C74.7 67.2 161.8 56.0 259.0 40.3" fill="none" stroke="#c6ff6b" stroke-width="3" stroke-linecap="round"/></svg>
+  <h2 data-t="contact"></h2>
+  <ul>
+    <li>bernardo@contatodireto.com</li>
+    <li><a href="https://bernardonovaes.vercel.app">bernardonovaes.vercel.app</a></li>
+    <li><a href="https://github.com/novaes7be">github.com/novaes7be</a></li>
+    <li><a href="https://br.linkedin.com/in/bernardo-nobrega-novaes/">linkedin.com/in/bernardo-nobrega-novaes</a></li>
+  </ul>
+  <h2 data-t="skills"></h2>
+  <div class="tags"><span>Java</span><span>Spring Boot</span><span>JPA</span><span>REST APIs</span><span>Redis</span><span>Docker</span><span>Git</span><span>GitHub Actions</span><span>Postman</span><span>Flutter</span></div>
+  <h2 data-t="top"></h2>
+  <ul data-list="topList"></ul>
+  <h2 data-t="langs"></h2>
+  <ul data-list="langList"></ul>
+  <h2 data-t="certs"></h2>
+  <ul data-list="certList"></ul>
+</aside>
+<main>
+  <h1>Bernardo Novaes</h1>
+  <p class="role" data-t="role"></p>
+  <p class="loc" data-t="loc"></p>
+  <h2 data-t="summaryT"></h2>
+  <p data-t="summary"></p>
+  <h2 data-t="eduT"></h2>
+  <div class="item"><b>FATEC Osasco</b><span class="when" data-t="edu1"></span></div>
+  <div class="item"><b>ILAC — Toronto, Canadá</b><span class="when" data-t="edu2"></span></div>
+  <h2 data-t="expT"></h2>
+  <div class="item"><b data-t="expRole"></b><span class="when" data-t="expWhen"></span><ul data-list="expList"></ul></div>
+  <h2 data-t="projT"></h2>
+  <div class="item"><b>JARDIFF</b><span class="when">Java · CI/CD · GitHub Actions — github.com/novaes7be/JARDIFF</span><ul><li data-t="p1"></li></ul></div>
+  <div class="item"><b>URL Shorter</b><span class="when">Java · Redis · REST — github.com/novaes7be/URL--Shorter</span><ul><li data-t="p2"></li></ul></div>
+  <div class="item"><b>TOTP from scratch</b><span class="when">Java · HMAC · Base32 (RFC 4648) · Spring</span><ul><li data-t="p3"></li></ul></div>
+</main>
+<script>
+const T={
+pt:{contact:"Contato",skills:"Tecnologias",top:"Destaques",langs:"Idiomas",certs:"Certificações",
+role:"Desenvolvedor back-end (Java | Spring Boot) · APIs REST",loc:"São Paulo, SP, Brasil · aberto a estágio",
+summaryT:"Resumo",summary:"Estudante do 2º semestre de Desenvolvimento de Software Multiplataforma na FATEC Osasco, com foco em back-end. Construo APIs REST com Java e Spring Boot em arquitetura em camadas (controller, service, repository) e persistência com JPA. Aprendo construindo projetos reais: já implementei TOTP do zero e publiquei uma GitHub Action no Marketplace. Tenho experiência inicial com Flutter. Fiz imersão em inglês em Toronto, no Canadá (nível C1). Procuro estágio para aprender em time e contribuir com projetos reais.",
+expT:"Experiência",expRole:"Desenvolvedor back-end (projetos acadêmicos)",expWhen:"mai/2025 – atual",
+expList:["APIs CRUD em arquitetura em camadas (Controller, Service, Repository)","Persistência de dados com JPA","Código limpo e organização modular","Estruturas de dados e algoritmos em Java"],
+projT:"Projetos",p1:"GitHub Action publicada no Marketplace que automatiza a comparação de JARs em pipelines de CI.",p2:"Encurtador de URLs com Redis para armazenamento e redirecionamento rápido.",p3:"Gerador de códigos de uso único implementado sem biblioteca: chave, Base32, HMAC e truncamento.",
+eduT:"Formação",edu1:"Tecnólogo em Desenvolvimento de Software Multiplataforma · 2º semestre (2026 – 2028)",edu2:"Programa de inglês · jun/2024 – ago/2024",
+topList:["Autenticação em duas etapas (2FA)","Codificação de dados (Base32, RFC 4648)","Manipulação de bits"],
+langList:["Português — nativo","Inglês — avançado (C1 · Duolingo English Test: 129)"],
+certList:["Oracle Java Foundations","C++ Essentials 1","Projetos de Sistemas de TI","Claude Academy: AI Fluency — Framework & Foundations","Introdução à Gestão de Projetos"]},
+en:{contact:"Contact",skills:"Tech stack",top:"Top skills",langs:"Languages",certs:"Certifications",
+role:"Backend Developer (Java | Spring Boot) · REST APIs",loc:"São Paulo, Brazil · open to internships",
+summaryT:"Summary",summary:"Second-semester Multiplatform Software Development student at FATEC Osasco, focused on backend. I build REST APIs with Java and Spring Boot using a layered architecture (controller, service, repository) and JPA for persistence. I learn by building real projects: I implemented TOTP from scratch and published a GitHub Action on the Marketplace. I also have initial experience with Flutter, which helps me understand full application flows. I completed an English immersion program in Toronto, Canada (C1 level). Seeking an internship to learn in a team and contribute to real-world projects.",
+expT:"Experience",expRole:"Backend Developer (Academic Projects)",expWhen:"May 2025 – Present",
+expList:["CRUD APIs with a layered architecture (Controller, Service, Repository)","Data persistence with JPA","Clean code and modular organization","Data structures and algorithms in Java"],
+projT:"Projects",p1:"GitHub Action published on the Marketplace that automates JAR comparison in CI pipelines.",p2:"URL shortener using Redis for fast storage and redirects.",p3:"One-time password generator built without libraries: key, Base32, HMAC and truncation.",
+eduT:"Education",edu1:"Associate's Degree, Multiplatform Software Development · 2nd semester (2026 – 2028)",edu2:"English Language Program · Jun 2024 – Aug 2024",
+topList:["Two-factor authentication (2FA)","Data encoding (Base32, RFC 4648)","Bit manipulation"],
+langList:["Portuguese — native","English — advanced (C1 · Duolingo English Test: 129)"],
+certList:["Oracle Java Foundations","C++ Essentials 1","Projetos de Sistemas de TI (IT Systems Projects)","Claude Academy: AI Fluency — Framework & Foundations","Introdução à Gestão de Projetos (Intro to Project Management)"]}};
+const L=new URLSearchParams(location.search).get('lang')==='en'?'en':'pt',d=T[L];
+document.documentElement.lang=L==='en'?'en':'pt-BR';
+document.querySelectorAll('[data-t]').forEach(e=>e.textContent=d[e.dataset.t]);
+document.querySelectorAll('[data-list]').forEach(e=>e.innerHTML=d[e.dataset.list].map(x=>'<li>'+x+'</li>').join(''));
+</script>
+</body>
+</html>
