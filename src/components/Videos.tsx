@@ -1,0 +1,31 @@
+import { useState } from 'react';
+import { useI18n } from '../lib/i18n';
+import type { Video } from '../content/content';
+import { SectionHead } from './SectionHead';
+
+function VideoCard({ v, soon, play }: { v: Video; soon: string; play: string }) {
+  const [playing, setPlaying] = useState(false);
+  const has = Boolean(v.youtube || v.mp4);
+  const icon = <span className="video__play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>;
+  let player;
+  if (playing && v.youtube) player = <div className="video__player"><iframe src={`https://www.youtube-nocookie.com/embed/${v.youtube}?autoplay=1`} title={v.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen loading="lazy" /></div>;
+  else if (playing && v.mp4) player = <div className="video__player"><video src={v.mp4} controls autoPlay playsInline /></div>;
+  else if (has) player = <button className="video__player" type="button" onClick={() => setPlaying(true)} aria-label={`${play}: ${v.title}`}>{v.poster && <img src={v.poster} alt="" loading="lazy" />}{icon}</button>;
+  else player = <div className="video__player" aria-disabled="true">{icon}<span className="video__soon mono">{soon}</span></div>;
+  return (
+    <article className="video card">
+      {player}
+      <div className="video__body"><h3>{v.title}</h3><p>{v.text}</p></div>
+    </article>
+  );
+}
+
+export function Videos() {
+  const { t } = useI18n();
+  return (
+    <section className="section container" id="videos" aria-labelledby="videos-title" style={{ paddingTop: 0 }}>
+      <SectionHead index="03" label={t.videos.label} title={t.videos.title} id="videos-title" />
+      <div className="videos">{t.videos.items.map(v => <VideoCard key={v.title} v={v} soon={t.videos.soon} play={t.videos.play} />)}</div>
+    </section>
+  );
+}
