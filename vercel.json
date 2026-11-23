@@ -1,1 +1,7 @@
-{"cleanUrls":true}
+{
+  "framework": "vite",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true
+}
