@@ -47,7 +47,7 @@ export function Hero({ ready }: { ready: boolean }) {
           </div>
           <div className="hero__right">
             <dl className="hero__meta">
-              {t.hero.meta.map(([k, v]) => <div key={k}><dt className="mono">{k}</dt><dd>{v}</dd></div>)}
+              {t.hero.meta.map(([k, v, sub]) => <div key={k}><dt className="mono">{k}</dt><dd>{v}{sub && <small className="hero__meta-sub">{sub}</small>}</dd></div>)}
             </dl>
           </div>
         </div>

@@ -35,7 +35,7 @@ const pt = {
     lines: ['Olá, sou o Bernardo.', 'Bem-vindo ao meu', 'portfólio.'],
     text: 'Sou estudante de Desenvolvimento de Software Multiplataforma na FATEC Osasco, atualmente no 2º semestre. Construo APIs REST com Java e Spring Boot, automações e ferramentas do zero, e gosto de entender o que acontece por baixo da biblioteca.',
     ctaProjects: 'Ver projetos', ctaContact: 'Falar comigo',
-    meta: [['Base', 'São Paulo, BR'], ['Foco', 'APIs REST em Java'], ['Inglês', 'C1 · Duolingo 129']] as [string, string][]
+    meta: [['Base', 'São Paulo, BR'], ['Foco', 'APIs REST em Java'], ['Inglês', 'C1 · ILAC Toronto', 'Duolingo English Test: 129']] as [string, string, string?][]
   },
   about: {
     label: 'Sobre',
@@ -101,7 +101,7 @@ const pt = {
   journey: {
     label: 'Trajetória', title: 'Formação e experiência',
     timeline: [
-      { when: 'jun — ago/2024', what: 'ILAC · Toronto, Canadá', detail: 'Programa de imersão em inglês. Resultado: nível C1 (Duolingo English Test: 129).', tag: 'Intercâmbio' },
+      { when: 'jun — ago/2024', what: 'ILAC · Toronto, Canadá', detail: 'Programa de imersão em inglês. Concluí no nível C1 (High-Advanced, nível 14). Duolingo English Test: 129.', tag: 'Intercâmbio' },
       { when: 'mai/2025 — hoje', what: 'Desenvolvedor back-end · projetos acadêmicos', detail: 'APIs CRUD em camadas, persistência com JPA, código limpo e prática de estruturas de dados em Java.', tag: 'Experiência' },
       { when: '2026 — 2028', what: 'FATEC Osasco', detail: 'Tecnólogo em Desenvolvimento de Software Multiplataforma. Cursando o 2º semestre.', tag: 'Formação' }
     ],
@@ -140,7 +140,7 @@ const en: Content = {
     lines: ["Hi, I'm Bernardo.", 'Welcome to my', 'portfolio.'],
     text: "I'm a Multiplatform Software Development student at FATEC Osasco, currently in my 2nd semester. I build REST APIs with Java and Spring Boot, automations and tools from scratch, and I like knowing what happens beneath the library.",
     ctaProjects: 'See work', ctaContact: 'Get in touch',
-    meta: [['Based', 'São Paulo, BR'], ['Focus', 'REST APIs in Java'], ['English', 'C1 · Duolingo 129']]
+    meta: [['Based', 'São Paulo, BR'], ['Focus', 'REST APIs in Java'], ['English', 'C1 · ILAC Toronto', 'Duolingo English Test: 129']]
   },
   about: {
     label: 'About',
@@ -200,7 +200,7 @@ const en: Content = {
   journey: {
     label: 'Journey', title: 'Education & experience',
     timeline: [
-      { when: 'Jun — Aug 2024', what: 'ILAC · Toronto, Canada', detail: 'English immersion program. Result: C1 level (Duolingo English Test: 129).', tag: 'Exchange' },
+      { when: 'Jun — Aug 2024', what: 'ILAC · Toronto, Canada', detail: 'English immersion program. Completed at C1 level (High-Advanced, level 14). Duolingo English Test: 129.', tag: 'Exchange' },
       { when: 'May 2025 — now', what: 'Back-end developer · academic projects', detail: 'Layered CRUD APIs, JPA persistence, clean code and data structures practice in Java.', tag: 'Experience' },
       { when: '2026 — 2028', what: 'FATEC Osasco', detail: "Associate's degree in Multiplatform Software Development. Currently in the 2nd semester.", tag: 'Education' }
     ],
