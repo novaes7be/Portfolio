@@ -4,7 +4,7 @@ import type { IconName } from '../lib/icons';
 export type Lang = 'pt' | 'en';
 
 export const LINKS = {
-  email: 'bernardo@contatodireto.com',
+  email: 'novaes.zxz@gmail.com',
   github: 'https://github.com/novaes7be',
   linkedin: 'https://br.linkedin.com/in/bernardo-nobrega-novaes/',
   instagram: 'https://instagram.com/novaes.zxz'
