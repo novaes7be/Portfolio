@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useI18n } from '../lib/i18n';
 import type { Video } from '../content/content';
 import { SectionHead } from './SectionHead';
-import { ProjectMedia } from './ProjectMedia';
+import { ProjectMedia, LoopVideo } from './ProjectMedia';
 
 function VideoCard({ v, soon, play, feature }: { v: Video; soon: string; play: string; feature: boolean }) {
   const { t } = useI18n();
@@ -11,7 +11,7 @@ function VideoCard({ v, soon, play, feature }: { v: Video; soon: string; play: s
   const icon = <span className="video__play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>;
   let player;
   if (playing && v.youtube) player = <div className="video__player"><iframe src={`https://www.youtube-nocookie.com/embed/${v.youtube}?autoplay=1`} title={v.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen loading="lazy" /></div>;
-  else if (playing && v.mp4) player = <div className="video__player"><video src={v.mp4} controls autoPlay playsInline /></div>;
+  else if (v.mp4) player = <div className="video__player"><LoopVideo src={v.mp4} poster={v.poster ?? ''} label={v.title} className="" /></div>;
   else if (has) player = <button className="video__player" type="button" onClick={() => setPlaying(true)} aria-label={`${play}: ${v.title}`}>{v.poster && <img src={v.poster} alt="" loading="lazy" />}{icon}</button>;
   else if (v.media) player = <div className="video__player video__preview"><ProjectMedia media={v.media} illustrative={t.projects.illustrative} note={t.projects.totpNote} expires={t.projects.expires} replay /></div>;
   else player = <div className="video__player" aria-disabled="true">{icon}<span className="video__soon mono">{soon}</span></div>;
