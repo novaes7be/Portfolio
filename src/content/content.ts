@@ -20,10 +20,10 @@ export type Project = {
 export const LOCAL_LOGOS: Record<'fiap' | 'bradesco', string> = { fiap: '', bradesco: '' };
 export type Org = { name: string; issuer: string; logo: IconName | keyof typeof LOCAL_LOGOS };
 
-export type Video = { title: string; text: string; youtube?: string; mp4?: string; poster?: string };
+export type Video = { title: string; text: string; media?: Project['media']; youtube?: string; mp4?: string; poster?: string };
 
-/* Vídeos: preencha youtube (id) ou mp4 (caminho em /public) para ativar o player. */
-const VIDEO_SRC: Pick<Video, 'youtube' | 'mp4' | 'poster'>[] = [{}, {}, {}];
+/* Vídeos: sem youtube (id) nem mp4 (caminho em /public), o cartão mostra a prévia animada do projeto. */
+const VIDEO_SRC: Pick<Video, 'media' | 'youtube' | 'mp4' | 'poster'>[] = [{ media: 'jardiff' }, { media: 'shorter' }, { media: 'totp' }];
 
 const pt = {
   meta: { lang: 'pt-BR', cv: 'cv/curriculo-bernardo-novaes-pt.pdf' },
