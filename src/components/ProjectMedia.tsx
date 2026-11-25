@@ -40,17 +40,28 @@ function Term({ lines, replay }: { lines: ReactNode[]; replay: boolean }) {
 
 export const Bar = ({ title }: { title: string }) => <div className="window-bar" aria-hidden="true"><i /><i /><i /><span>{title}</span></div>;
 
-/** Vídeo mudo em loop: só toca enquanto está na tela; com movimento reduzido, fica a capa. */
-function LoopVideo({ src, poster }: { src: string; poster: string }) {
+/**
+ * Vídeo mudo em loop: só toca enquanto está na tela. Com movimento reduzido, ou se o navegador
+ * bloquear a reprodução automática (ex.: Modo de Pouca Energia no iPhone), mostra os controles.
+ */
+export function LoopVideo({ src, poster, label, className = 'media-video' }: { src: string; poster: string; label?: string; className?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [blocked, setBlocked] = useState(false);
   useEffect(() => {
     const v = ref.current;
-    if (!v || prefersReduced()) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }, { threshold: 0.3 });
+    if (!v) return;
+    v.muted = true;
+    v.setAttribute('muted', ''); // o React não escreve o atributo, e o Safari confere ele
+    if (prefersReduced()) { setBlocked(true); return; }
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) v.play().catch(() => setBlocked(true));
+      else v.pause();
+    }, { threshold: 0.3 });
     io.observe(v);
     return () => io.disconnect();
   }, []);
-  return <video className="media-video" ref={ref} src={src} poster={poster} muted loop playsInline preload="none" aria-hidden="true" />;
+  return <video className={className} ref={ref} src={src} poster={poster} muted loop playsInline preload="metadata"
+    controls={blocked} aria-label={label} aria-hidden={label ? undefined : true} />;
 }
 
 export function ProjectMedia({ media, illustrative, note, expires, replay = false }: Props) {
