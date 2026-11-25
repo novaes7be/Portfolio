@@ -4,20 +4,7 @@ import { useI18n } from '../lib/i18n';
 import type { Project } from '../content/content';
 import { SectionHead } from './SectionHead';
 import { Magnetic } from './Magnetic';
-import { Totp } from './Totp';
-
-function Media({ p, illustrative, note, expires }: { p: Project; illustrative: string; note: string; expires: string }) {
-  if (p.media === 'totp') return <><Bar title="totp · live" /><Totp note={note} expires={expires} /></>;
-  if (p.media === 'jardiff') return (
-    <><Bar title=".github/workflows/ci.yml" />
-      <pre className="term" aria-hidden="true"><span className="c"># {illustrative}</span>{'\n'}<span className="a">- uses:</span> <span className="t">novaes7be/JARDIFF@v1</span>{'\n  '}<span className="a">with:</span>{'\n    old: build/app-1.0.jar\n    new: build/app-1.1.jar\n\n'}<span className="t">Comparing JARs…</span>{'\n'}<span className="g">+ com/app/service/AuthService.class</span>{'\n'}<span className="r">- com/app/legacy/OldUtil.class</span>{'\n'}<span className="a">~ com/app/api/UserController.class</span></pre></>
-  );
-  return (
-    <><Bar title="terminal" />
-      <pre className="term" aria-hidden="true"><span className="c"># {illustrative}</span>{'\n'}<span className="t">$ curl -X POST /api/urls -d '{'{'}"url":"https://example.com/a/long/link"{'}'}'</span>{'\n'}<span className="g">201 Created</span>{'\n{ "short": "/aZ3k9" }\n\n'}<span className="t">$ curl -I /aZ3k9</span>{'\n'}<span className="a">302 Found</span>{'\nLocation: https://example.com/a/long/link'}</pre></>
-  );
-}
-const Bar = ({ title }: { title: string }) => <div className="window-bar" aria-hidden="true"><i /><i /><i /><span>{title}</span></div>;
+import { ProjectMedia } from './ProjectMedia';
 
 function ProjectCard({ p, i }: { p: Project; i: number }) {
   const { t } = useI18n();
@@ -41,7 +28,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
           </button>
         </div>
       </div>
-      <div className="project__media"><div className="project__media-inner"><Media p={p} illustrative={t.projects.illustrative} note={t.projects.totpNote} expires={t.projects.expires} /></div></div>
+      <div className="project__media"><div className="project__media-inner"><ProjectMedia media={p.media} illustrative={t.projects.illustrative} note={t.projects.totpNote} expires={t.projects.expires} /></div></div>
     </article>
   );
 }
