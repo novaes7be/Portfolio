@@ -301,6 +301,14 @@ button.video__player:hover .video__play { transform: scale(1.1); }
 .video__preview .otp { font-size: clamp(1.75rem, 14cqi, 3rem); }
 .term .ln { transition: opacity 0.3s var(--ease); }
 .term .ln[data-on='false'] { opacity: 0; }
+.video--feature { grid-column: 1 / -1; }
+.project__media:has(.media-video) { min-height: 0; }
+.media-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface-2); }
+@media (min-width: 1024px) {
+  .video--feature { display: grid; grid-template-columns: 2fr 1fr; }
+  .video--feature .video__player { border-bottom: 0; border-right: 1px solid var(--border); }
+  .video--feature .video__body { align-self: center; padding: var(--sp-6); }
+}
 .video__soon { position: absolute; left: var(--sp-4); bottom: var(--sp-4); color: var(--muted); }
 .video__body { padding: var(--sp-5); }
 .video__body h3 { font: 500 1.25rem/1.2 var(--f-display); margin-bottom: var(--sp-2); }

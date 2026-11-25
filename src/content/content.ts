@@ -12,8 +12,8 @@ export const LINKS = {
 
 export type Project = {
   id: string; name: string; kind: string; summary: string; role: string;
-  stack: string[]; how: string[]; repo: string; repoLabel: string; demo?: string;
-  media: 'jardiff' | 'shorter' | 'totp';
+  stack: string[]; how: string[]; repo?: string; repoLabel?: string; demo?: string;
+  media: 'studiy' | 'jardiff' | 'shorter' | 'totp';
 };
 
 /** Logos que não existem no Simple Icons: coloque o SVG oficial em public/logos e informe o caminho aqui. */
@@ -23,7 +23,7 @@ export type Org = { name: string; issuer: string; logo: IconName | keyof typeof 
 export type Video = { title: string; text: string; media?: Project['media']; youtube?: string; mp4?: string; poster?: string };
 
 /* Vídeos: sem youtube (id) nem mp4 (caminho em /public), o cartão mostra a prévia animada do projeto. */
-const VIDEO_SRC: Pick<Video, 'media' | 'youtube' | 'mp4' | 'poster'>[] = [{ media: 'jardiff' }, { media: 'shorter' }, { media: 'totp' }];
+const VIDEO_SRC: Pick<Video, 'media' | 'youtube' | 'mp4' | 'poster'>[] = [{ mp4: 'demos/studiy.mp4', poster: 'demos/studiy-poster.jpg' }, { media: 'jardiff' }, { media: 'shorter' }, { media: 'totp' }];
 
 const pt = {
   meta: { lang: 'pt-BR', cv: 'cv/curriculo-bernardo-novaes-pt.pdf' },
@@ -53,10 +53,15 @@ const pt = {
   },
   projects: {
     label: 'Projetos', title: 'Trabalho selecionado',
-    intro: 'Projetos pequenos e completos, cada um para responder a uma pergunta técnica.',
+    intro: 'Projetos completos, cada um para responder a uma pergunta técnica.',
     role: 'Meu papel', how: 'Como funciona', more: 'Ver detalhes', less: 'Ocultar detalhes', illustrative: 'exemplo ilustrativo',
     totpNote: 'código real, gerado agora no seu navegador (RFC 6238, chave de demonstração)', expires: 'expira em',
     items: [
+      { id: 'studiy', name: 'Studiy', kind: 'Plataforma web · full-stack', media: 'studiy',
+        summary: 'Plataforma de estudos: você envia o PDF da aula e recebe resumo e flashcards com revisão espaçada.',
+        role: 'Projeto inteiro: API, banco de dados, front-end, pagamentos e deploy em VPS.',
+        stack: ['Java 17', 'Spring Boot 3', 'PostgreSQL', 'Flyway', 'Docker', 'Caddy'],
+        how: ['A API extrai o texto do PDF e gera resumo e flashcards com IA.', 'A revisão espaçada (SM-2) decide quando cada cartão volta.', 'Plano Pro por cartão ou Pix via Mercado Pago, com deploy automático a cada merge na main.'] },
       { id: 'jardiff', name: 'JARDIFF', kind: 'GitHub Action · publicada no Marketplace', media: 'jardiff',
         summary: 'Action que automatiza a comparação de arquivos JAR dentro de pipelines de CI.',
         role: 'Projeto inteiro: lógica de comparação, empacotamento e publicação no Marketplace.',
@@ -80,6 +85,7 @@ const pt = {
   videos: {
     label: 'Demos', title: 'Projetos em movimento', soon: 'Vídeo em breve', play: 'Reproduzir vídeo',
     items: [
+      { title: 'Studiy', text: 'Da landing à revisão de flashcards, com troca de paleta e planos.' },
       { title: 'JARDIFF', text: 'A Action comparando dois JARs num pipeline.' },
       { title: 'URL Shorter', text: 'Criando um link curto e seguindo o redirecionamento.' },
       { title: 'TOTP from scratch', text: 'Gerando e validando códigos de uso único.' }
@@ -158,19 +164,23 @@ const en: Content = {
   },
   projects: {
     label: 'Work', title: 'Selected work',
-    intro: 'Small, complete projects, each one answering a technical question.',
+    intro: 'Complete projects, each one answering a technical question.',
     role: 'My role', how: 'How it works', more: 'Show details', less: 'Hide details', illustrative: 'illustrative example',
     totpNote: 'real code, generated now in your browser (RFC 6238, demo key)', expires: 'expires in',
     items: [
-      { ...pt.projects.items[0], kind: 'GitHub Action · published on the Marketplace',
+      { ...pt.projects.items[0], kind: 'Web platform · full-stack',
+        summary: 'A study platform: upload the lecture PDF and get a summary and flashcards with spaced repetition.',
+        role: 'The whole project: API, database, front end, payments and VPS deployment.',
+        how: ['The API extracts the text from the PDF and generates a summary and flashcards with AI.', 'Spaced repetition (SM-2) decides when each card comes back.', 'Pro plan paid by card or Pix via Mercado Pago, with automatic deployment on every merge to main.'] },
+      { ...pt.projects.items[1], kind: 'GitHub Action · published on the Marketplace',
         summary: 'Action that automates JAR file comparison inside CI pipelines.',
         role: 'The whole project: comparison logic, packaging and Marketplace publishing.',
         how: ['Takes two JARs in the workflow.', 'Compares their contents and flags what was added, removed or changed.', 'Runs as a pipeline step, no manual work.'], repoLabel: 'Code on GitHub' },
-      { ...pt.projects.items[1], kind: 'REST API',
+      { ...pt.projects.items[2], kind: 'REST API',
         summary: 'URL shortener using Redis to store links and redirect fast.',
         role: 'REST API, Redis data model and redirect logic.',
         how: ['A POST creates the short code and stores the target in Redis.', 'A GET on the code responds with a redirect to the target.', 'In-memory key-value keeps reads fast.'], repoLabel: 'Code on GitHub' },
-      { ...pt.projects.items[2], kind: 'Security · in progress',
+      { ...pt.projects.items[3], kind: 'Security · in progress',
         summary: 'One-time password (2FA) generator built without libraries, evolving into a protected CRUD.',
         role: 'The full algorithm, from secret key to 6-digit code.',
         how: ['Decodes the Base32 secret key.', 'Computes the HMAC of the time counter (30 s windows).', 'Applies dynamic truncation to produce 6 digits.'], repoLabel: 'View on GitHub' }
@@ -179,6 +189,7 @@ const en: Content = {
   videos: {
     label: 'Demos', title: 'Projects in motion', soon: 'Video coming soon', play: 'Play video',
     items: [
+      { title: 'Studiy', text: 'From the landing page to a flashcard review, with a palette switch and the plans.' },
       { title: 'JARDIFF', text: 'The Action comparing two JARs in a pipeline.' },
       { title: 'URL Shorter', text: 'Creating a short link and following the redirect.' },
       { title: 'TOTP from scratch', text: 'Generating and validating one-time codes.' }

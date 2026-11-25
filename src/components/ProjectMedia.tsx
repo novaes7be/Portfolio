@@ -40,7 +40,21 @@ function Term({ lines, replay }: { lines: ReactNode[]; replay: boolean }) {
 
 export const Bar = ({ title }: { title: string }) => <div className="window-bar" aria-hidden="true"><i /><i /><i /><span>{title}</span></div>;
 
+/** Vídeo mudo em loop: só toca enquanto está na tela; com movimento reduzido, fica a capa. */
+function LoopVideo({ src, poster }: { src: string; poster: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v || prefersReduced()) return;
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }, { threshold: 0.3 });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  return <video className="media-video" ref={ref} src={src} poster={poster} muted loop playsInline preload="none" aria-hidden="true" />;
+}
+
 export function ProjectMedia({ media, illustrative, note, expires, replay = false }: Props) {
+  if (media === 'studiy') return <><Bar title="studiy · tour" /><LoopVideo src="demos/studiy.mp4" poster="demos/studiy-poster.jpg" /></>;
   if (media === 'totp') return <><Bar title="totp · live" /><Totp note={note} expires={expires} /></>;
   if (media === 'jardiff') return (
     <><Bar title=".github/workflows/ci.yml" />
