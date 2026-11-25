@@ -21,7 +21,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
           <div><ol aria-label={t.projects.how}>{p.how.map(h => <li key={h}>{h}</li>)}</ol></div>
         </div>
         <div className="project__actions">
-          <Magnetic><a className="btn btn--primary" href={p.repo} target="_blank" rel="noopener noreferrer">{p.repoLabel} <span className="arrow" aria-hidden="true">↗</span></a></Magnetic>
+          {p.repo && <Magnetic><a className="btn btn--primary" href={p.repo} target="_blank" rel="noopener noreferrer">{p.repoLabel} <span className="arrow" aria-hidden="true">↗</span></a></Magnetic>}
           {p.demo && <Magnetic><a className="btn" href={p.demo} target="_blank" rel="noopener noreferrer">Demo <span className="arrow" aria-hidden="true">↗</span></a></Magnetic>}
           <button className="details-btn mono" type="button" aria-expanded={open} aria-controls={`p-${p.id}-how`} onClick={() => setOpen(o => !o)}>
             <i aria-hidden="true" />{open ? t.projects.less : t.projects.more}

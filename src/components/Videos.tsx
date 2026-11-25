@@ -4,7 +4,7 @@ import type { Video } from '../content/content';
 import { SectionHead } from './SectionHead';
 import { ProjectMedia } from './ProjectMedia';
 
-function VideoCard({ v, soon, play }: { v: Video; soon: string; play: string }) {
+function VideoCard({ v, soon, play, feature }: { v: Video; soon: string; play: string; feature: boolean }) {
   const { t } = useI18n();
   const [playing, setPlaying] = useState(false);
   const has = Boolean(v.youtube || v.mp4);
@@ -16,7 +16,7 @@ function VideoCard({ v, soon, play }: { v: Video; soon: string; play: string }) 
   else if (v.media) player = <div className="video__player video__preview"><ProjectMedia media={v.media} illustrative={t.projects.illustrative} note={t.projects.totpNote} expires={t.projects.expires} replay /></div>;
   else player = <div className="video__player" aria-disabled="true">{icon}<span className="video__soon mono">{soon}</span></div>;
   return (
-    <article className="video card">
+    <article className={`video card${feature ? ' video--feature' : ''}`}>
       {player}
       <div className="video__body"><h3>{v.title}</h3><p>{v.text}</p></div>
     </article>
@@ -28,7 +28,7 @@ export function Videos() {
   return (
     <section className="section container" id="videos" aria-labelledby="videos-title" style={{ paddingTop: 0 }}>
       <SectionHead index="03" label={t.videos.label} title={t.videos.title} id="videos-title" />
-      <div className="videos">{t.videos.items.map(v => <VideoCard key={v.title} v={v} soon={t.videos.soon} play={t.videos.play} />)}</div>
+      <div className="videos">{t.videos.items.map((v, i) => <VideoCard key={v.title} v={v} soon={t.videos.soon} play={t.videos.play} feature={i === 0 && t.videos.items.length % 3 === 1} />)}</div>
     </section>
   );
 }
